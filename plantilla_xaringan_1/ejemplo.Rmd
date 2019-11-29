@@ -1,0 +1,277 @@
+---
+title: "Mi plantilla Xaringan 1"
+subtitle: "Tema: Max Kuhn <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "Edimer David Jaramillo"
+institute: "UNAL - Solla"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+class: left
+
+# Título
+
+Resaltando texto en color .red[rojo], .orange[naranja] y .blue[azul].
+
+---
+class: inverse, center, middle
+
+# Título centrado
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Contenido...
+
+--
+
+- Primera parte...<sup>1</sup>
+
+--
+
+- Segunda parte....
+
+--
+
+- Tercera parte...
+
+.footnote[
+[1] [Edimer David Jaramillo](https://edimer.github.io/)]
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Texto a dos columnas...
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;<sup>*</sup>
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Expresiones matemáticas
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# R Plots
+
+```{r cars, fig.height=4, dev='svg'}
+par(mar = c(4, 4, 1, .1))
+scatter.smooth(iris$Sepal.Length, iris$Petal.Length)
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Tabla estática
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Tabla dinámica
+
+```{r eval=require('DT'), tidy=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 5)
+)
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Gráfico interactivo
+
+```{r out.width='100%', fig.height=6, eval=require('leaflet')}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Personalización 1
+
+
+.pull-left[
+An example using a leading `*`:
+
+    ```r
+    if (TRUE) {
+    ** message("Very important!")
+    }
+    ```
+Output:
+```r
+if (TRUE) {
+* message("Very important!")
+}
+```
+
+This is invalid R code, so it is a plain fenced code block that is not executed.
+]
+
+.pull-right[
+An example using `{{}}`:
+
+````
+`r ''````{r tidy=FALSE}
+if (TRUE) {
+*{{ message("Very important!") }}
+}
+```
+````
+Output:
+```{r tidy=FALSE}
+if (TRUE) {
+{{ message("Very important!") }}
+}
+```
+
+It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
+]
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Personalización 2
+
+An example of using the trailing comment `#<<` to highlight lines:
+
+````markdown
+`r ''````{r tidy=FALSE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + 
+  geom_point() +   #<<
+  geom_smooth()    #<<
+```
+````
+
+Output:
+
+```{r tidy=FALSE, eval=FALSE}
+library(ggplot2)
+ggplot(mtcars) + 
+  aes(mpg, disp) + #<<
+  geom_point() +   #<<
+  geom_smooth()    #<<
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Personalización 3
+
+When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
+
+````md
+`r ''````{r, highlight.output=c(1, 3)}
+head(iris)
+```
+````
+
+```{r, highlight.output=c(1, 3), echo=FALSE}
+head(iris)
+```
+
+---
+background-image: url(https://cdn.pixabay.com/photo/2016/06/22/08/40/atom-1472657_960_720.png)
+background-size: 100px
+background-position: 98% 2%
+
+# Temas disponibles
+
+Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
+
+```{r}
+names(xaringan:::list_css())
+```
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
