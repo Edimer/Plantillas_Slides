@@ -1,0 +1,23 @@
+\ifdefined\knitrout
+\renewenvironment{knitrout}{\begin{footnotesize}}{\end{footnotesize}}
+\else
+\fi
+
+\makeatletter
+\let\oldalltt\alltt
+\def\alltt{\@ifnextchar[\alltt@i \alltt@ii}
+\def\alltt@i[#1]{\oldalltt[#1]\footnotesize}
+\def\alltt@ii{\oldalltt\footnotesize}
+\makeatother
+
+\renewcommand{\contentsname}{Contenido}
+
+%% change fontsize of R code
+\let\oldShaded\Shaded
+\let\endoldShaded\endShaded
+\renewenvironment{Shaded}{\footnotesize\oldShaded}{\endoldShaded}
+
+%% change fontsize of output
+\let\oldverbatim\verbatim
+\let\endoldverbatim\endverbatim
+\renewenvironment{verbatim}{\footnotesize\oldverbatim}{\endoldverbatim}

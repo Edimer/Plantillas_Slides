@@ -1,0 +1,79 @@
+---
+title: "Plantilla PDF"
+subtitle: "Tema: Madrid"
+author: "Edimer David Jaramillo"
+date: "`r Sys.Date()`"
+output: 
+  beamer_presentation:
+    theme: "Madrid"
+    colortheme: "whale"
+    slide_level: 1
+    keep_tex: yes
+    toc: false
+    fonttheme: "structurebold"
+    includes:
+      in_header: header.txt
+    fig_width: 2.8
+    fig_height: 2
+    highlight: kate
+    fig_caption: false
+    df_print: kable
+css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      eval = TRUE,
+                      message = FALSE,
+                      fig.align = "center",
+                      dev = 'pdf',
+                      fig.height=8,
+                      fig.width=9,
+                      out.height="0.8\\textheight")
+```
+
+# Introducción
+
+Texto...
+
+## Introducción
+
+- Viñeta 1
+- Viñeta 2
+    - Subviñeta 1
+    - Subviñeta 2
+
+
+# Inteligencia Artificial
+
+```{r, echo = FALSE, out.width="180px", out.height="150px"}
+knitr::include_graphics("img/img22.png")
+```
+
+# Machine Learning
+
+```{r, echo = FALSE}
+plot(iris)
+```
+
+# Código sin output
+
+```{r, fig.height=5, fig.width=9, out.height="0.5\\textheight"}
+library(dplyr)
+library(ggplot2)
+iris %>% 
+  ggplot(data = ., aes(x = Species, y = Sepal.Length, color = Species)) +
+  geom_boxplot() +
+  geom_jitter() +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+
+# 
+
+```{r, echo = FALSE, out.width="180px", out.height="150px"}
+knitr::include_graphics("img/gracias.jpg")
+```
+
