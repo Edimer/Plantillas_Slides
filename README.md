@@ -8,4 +8,6 @@
 <img src="https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png" width="33%" align="left" /><img src="https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png" width="33%" align="left" />
 
 
+# Visualización previa de *HTML*
 
+Para visualizar las presentaciones en *HTML* sin necesidad de descargar los archivos, es posible utilizar [GitHub & BitBucket HTML Preview.](https://htmlpreview.github.io/)
