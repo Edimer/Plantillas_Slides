@@ -1,6 +1,6 @@
 ---
 title: "Biblioteca `revealjs`"
-subtitle: "Plantilla 1"
+subtitle: "Plantilla 1: Ejemplo"
 author: "[Edimer David Jaramillo](https://edimer.github.io/)"
 date: "`r Sys.Date()`"
 output:
