@@ -34,3 +34,42 @@ knitr::include_graphics("img/fisher1.jpg")
 ```{r, echo=FALSE, eval = TRUE, fig.align = 'center', fig.cap='R. Fisher 2.', out.width="500"}
 knitr::include_graphics("img/fisher2.PNG")
 ```
+
+## George Box 
+
+```{r, echo=FALSE, eval = TRUE, fig.align = 'center', fig.cap='G. Box.', out.width="500"}
+knitr::include_graphics("img/box.PNG")
+```
+
+# Normalidad
+
+## Q-Q Norm
+
+```{r, eval = TRUE}
+library(qqplotr)
+library(dplyr)
+iris %>% 
+  ggplot(data = ., aes(sample = Sepal.Length)) +
+  stat_qq_band() +
+  stat_qq_line() +
+  stat_qq_point() +
+  labs(x = "Cuantiles teóricos", y = "Cuantiles muestrales")
+```
+
+## Histograma
+
+```{r, eval = TRUE}
+
+```
+
+## Densidad
+
+```{r, eval = TRUE}
+
+```
+
+## Shapiro Wilk
+
+```{r, eval = TRUE}
+
+```
