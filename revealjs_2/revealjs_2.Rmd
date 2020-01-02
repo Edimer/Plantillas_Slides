@@ -85,7 +85,7 @@ cars %>%
 <img src="https://i.pinimg.com/originals/2f/e6/f4/2fe6f4b2df9837a14cabefa4cb22d7c6.png" style="position:absolute;top:0px;right:30px; width:80px" />
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 library(plotly)
 cars %>% 
   plot_ly(x = ~speed, y = ~dist, color = I("dodgerblue4"), stroke = I("black"),
@@ -98,7 +98,7 @@ cars %>%
 ## `dygraphs`
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 library(dygraphs)
 lungDeaths <- cbind(mdeaths, fdeaths)
 dygraph(lungDeaths)
@@ -108,7 +108,7 @@ dygraph(lungDeaths)
 ## `taucharts`
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 #devtools::install_github("hrbrmstr/taucharts")
 library(taucharts)
 CO2 %>%
@@ -122,7 +122,7 @@ CO2 %>%
 ## `metricsgraphics`
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 library(metricsgraphics)
 mtcars %>%
   mjs_plot(x=wt, y=mpg, width=600, height=500) %>%
@@ -134,7 +134,7 @@ mtcars %>%
 ## `highcharter`
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 library("highcharter")
 data(diamonds, mpg, package = "ggplot2")
 
@@ -145,7 +145,7 @@ hchart(mpg, "scatter", hcaes(x = displ, y = hwy, group = class))
 ## `echarts4r`
 
 <center>
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 library(echarts4r)
 e1 <- iris %>% 
   group_by(Species) %>% 
