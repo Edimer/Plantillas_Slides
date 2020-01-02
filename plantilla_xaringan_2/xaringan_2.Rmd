@@ -1,0 +1,55 @@
+---
+title: "Plantilla Xaringan"
+subtitle: "Mi plantilla 2"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: style_xaringan_2.css
+    nature:
+      countIncrementalSlides: yes
+      highlightLines: yes
+      highlightStyle: github
+      ratio: 16:9
+---
+class: rstudio-slide, left, rstudio-overview
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.align = "center", 
+                      fig.width = 6, fig.height = 4)
+```
+
+# Mis datos
+
+- [Mi página web](https://edimer.github.io/)
+- [Perfil de github](https://github.com/Edimer)
+- [Perfil rpubs](https://rpubs.com/Edimer)
+
+![](https://s3.amazonaws.com/javierluraschi/tensorflow-deployment-rstudio-conf/images/tensorflow-deployment-goal.png)
+
+---
+class: rstudio-slide, left
+# ggplot2
+
+```{r}
+library(ggplot2)
+library(dplyr)
+iris %>% 
+  ggplot(data = ., aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_boxplot() +
+  theme_light() + theme(legend.position = "none")
+```
+
+---
+class: rstudio-slide, left
+
+# ¡Gracias!
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/thanks.gif")
+```
+
