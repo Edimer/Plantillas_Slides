@@ -40,15 +40,26 @@ knitr::opts_chunk$set(eval = FALSE,
 ## `graphics`
 
 ```{r, eval=TRUE}
-scatter.smooth(cars$speed, cars$dist, pch = 18, col = "dodgerblue4",
-               lpars = list(col = "red", lwd = 2))
+with(cars, scatter.smooth(speed, dist, pch = 18, col = "dodgerblue4",
+               lpars = list(col = "red3", lwd = 2)))
+grid(col = "gray80")
 ```
 
 ## `lattice`
 
+```{r, eval = TRUE}
+library(lattice)
+xyplot(dist ~ speed, data = cars, type = c("p", "smooth"), pch = 18,
+       grid = TRUE, col = "dodgerblue4", col.line = "red3", lwd = 2)
+```
+
 ## `ggplot2`
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:0px;right:30px; width:80px" />
+
+```{r}
+
+```
 
 ## `ggviz`
 
