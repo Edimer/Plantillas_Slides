@@ -30,7 +30,6 @@ knitr::opts_chunk$set(eval = FALSE,
 - Visualización interactiva:
     - `plotly`
     - `dygraphs`
-    - `leaflet`
     - `taucharts`
     - `metricsgraphics`
     - `highcharter`
@@ -100,15 +99,9 @@ cars %>%
 
 <center>
 ```{r, eval=TRUE}
-
-```
-</center>
-
-## `leaflet`
-
-<center>
-```{r, eval=TRUE}
-
+library(dygraphs)
+lungDeaths <- cbind(mdeaths, fdeaths)
+dygraph(lungDeaths)
 ```
 </center>
 
@@ -116,7 +109,13 @@ cars %>%
 
 <center>
 ```{r, eval=TRUE}
-
+#devtools::install_github("hrbrmstr/taucharts")
+library(taucharts)
+CO2 %>%
+  tauchart( ) %>%
+  tau_point( "conc", c("Treatment","uptake"), "Plant" ) %>%
+  tau_tooltip( ) %>%
+  tau_trendline( )
 ```
 </center>
 
@@ -124,7 +123,11 @@ cars %>%
 
 <center>
 ```{r, eval=TRUE}
-
+library(metricsgraphics)
+mtcars %>%
+  mjs_plot(x=wt, y=mpg, width=600, height=500) %>%
+  mjs_point(least_squares=TRUE) %>%
+  mjs_labs(x="Weight of Car", y="Miles per Gallon")
 ```
 </center>
 
@@ -144,8 +147,18 @@ cars %>%
 ```
 </center>
 
+# Recursos
+
+- [`ggvis` RStudio](https://ggvis.rstudio.com/)
+- [Plotly R](https://plot.ly/r/)
+- [Ejemplos `dygraphs` en Rpubs](https://www.rpubs.com/yoshio/99777)
+- [Ejemplos `taucharts`](http://www.buildingwidgets.com/blog/2015/8/5/week-31-taucharts)
+- [Ejemplos `metricsgraphics`](http://hrbrmstr.github.io/metricsgraphics/)
+
+<!--
 # 
 
 ```{r, echo=FALSE, eval = TRUE, fig.align = 'center', out.width="500", out.height="500"}
 knitr::include_graphics("img/thanks.gif")
 ```
+-->
