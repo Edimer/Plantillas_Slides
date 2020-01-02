@@ -59,17 +59,79 @@ iris %>%
 ## Histograma
 
 ```{r, eval = TRUE}
-
+iris %>% 
+  ggplot(data = ., aes(x = Sepal.Length)) +
+  geom_histogram(color = "black", bins = 30, fill = "dodgerblue4") +
+  theme_light() +
+  labs(x = "Longitud del sépalo", y = "Frecuencia") +
+  ggtitle("Histograma de longitud del sépalo")
 ```
 
 ## Densidad
 
 ```{r, eval = TRUE}
-
+iris %>% 
+  ggplot(data = ., aes(x = Sepal.Length)) +
+  geom_density(fill = "dodgerblue4", color = "black", lwd = 0.7) +
+  theme_light() +
+  labs(x = "Longitud del sépalo", y = "Densidad") +
+  ggtitle("Histograma de longitud del sépalo")
 ```
 
 ## Shapiro Wilk
 
 ```{r, eval = TRUE}
+iris$Sepal.Length %>% 
+  shapiro.test()
+```
 
+## Resumen
+
+> - Gráfico cuantil cuantil
+> - Histograma
+> - Densidad
+> - Test de *Shapiro Wilk*
+
+# Secuencia de códigos
+
+## `ggplot2`
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:-80px;right:30px; width:80px" />
+
+<div class="fragment">
+```{r}
+library(ggplot2)                                 # Cargando biblioteca
+```
+</div>
+<div class="fragment">
+```{r}
+g1 <- iris %>% 
+  ggplot(data = ., aes(x = Sepal.Length))        # Primera capa
+```
+</div>
+<div class="fragment">
+```{r}
+g1 <- g1 + geom_histogram()                      # Histograma
+```
+</div>
+<div class="fragment">
+```{r}
+g1 <- g1 + labs(x = "Longitud del sépalo")       # Etiqueta del eje x        
+```
+</div>
+<div class="fragment">
+```{r}
+g1 <- g1 + theme_light()                         # Cambiando el tema       
+```
+</div>
+<div class="fragment">
+```{r}
+g1                                               # Imprimiento gráfico      
+```
+</div>
+
+# ¡Gracias!
+
+```{r, echo=FALSE, eval = TRUE, fig.align = 'center', out.width="500"}
+knitr::include_graphics("img/thanks.gif")
 ```
