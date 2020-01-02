@@ -11,6 +11,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
                       fig.align = "center",
                       fig.width = 6,
                       fig.height = 4)
@@ -58,7 +60,12 @@ xyplot(dist ~ speed, data = cars, type = c("p", "smooth"), pch = 18,
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:0px;right:30px; width:80px" />
 
 ```{r}
-
+library(ggplot2)
+cars %>% 
+  ggplot(data = ., aes(x = speed, y = dist)) +
+  geom_point(pch = 18, size = 2, color = "dodgerblue4") +
+  geom_smooth(se = FALSE, color = "red3", method = "loess", span = 2/3) +
+  theme_light()
 ```
 
 ## `ggviz`
