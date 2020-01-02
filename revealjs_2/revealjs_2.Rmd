@@ -1,0 +1,32 @@
+---
+title: "Biblioteca `revealjs`"
+subtitle: "Plantilla 2: Gráficos con R"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+date: "`r Sys.Date()`"
+output:
+  revealjs::revealjs_presentation:
+    self_contained: true
+    css: style_revealjs_2.css
+    theme: white
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Introducción
+
+## Sistemas de graficación
+
+- Visualización estática:
+    - `graphics`
+    - `lattice`
+    - `ggplot2`
+    - `ggviz`
+- Visualización interactiva:
+    - `plotly`
+    - `rgl`
+    - `dygraphs`
+    - `leaflet`
+    - `taucharts`
+    - `metricsgraphics`
