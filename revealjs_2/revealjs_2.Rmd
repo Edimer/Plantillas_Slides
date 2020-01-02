@@ -1,6 +1,5 @@
 ---
-title: "Biblioteca `revealjs`"
-subtitle: "Plantilla 2: Gráficos con R"
+title: "Biblioteca `revealjs`: Gráficos con R"
 author: "[Edimer David Jaramillo](https://edimer.github.io/)"
 date: "`r Sys.Date()`"
 output:
@@ -11,7 +10,10 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = FALSE)
+knitr::opts_chunk$set(eval = FALSE,
+                      fig.align = "center",
+                      fig.width = 6,
+                      fig.height = 4)
 ```
 
 # Introducción
@@ -30,3 +32,51 @@ knitr::opts_chunk$set(eval = FALSE)
     - `leaflet`
     - `taucharts`
     - `metricsgraphics`
+    - `highcharter`
+    - `echarts4r`
+
+# Visualización estática
+
+## `graphics`
+
+```{r, eval=TRUE}
+scatter.smooth(cars$speed, cars$dist, pch = 18, col = "dodgerblue4",
+               lpars = list(col = "red", lwd = 2))
+```
+
+## `lattice`
+
+## `ggplot2`
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:0px;right:30px; width:80px" />
+
+## `ggviz`
+
+# Visualización interactiva
+
+## `plotly`
+
+<img src="https://i.pinimg.com/originals/2f/e6/f4/2fe6f4b2df9837a14cabefa4cb22d7c6.png" style="position:absolute;top:0px;right:30px; width:80px" />
+
+## `rgl`
+
+## `dygraphs`
+
+
+## `leaflet`
+
+## `taucharts`
+
+## `metricsgraphics`
+
+## `highcharter`
+
+## `echarts4r`
+
+<img src="https://raw.githubusercontent.com/JohnCoene/echarts4r/master/docs/logo.png" style="position:absolute;top:0px;right:30px; width:80px" />
+
+# 
+
+```{r, echo=FALSE, eval = TRUE, fig.align = 'center', out.width="500", out.height="500"}
+knitr::include_graphics("img/thanks.gif")
+```
