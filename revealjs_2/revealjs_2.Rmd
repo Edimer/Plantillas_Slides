@@ -59,8 +59,9 @@ xyplot(dist ~ speed, data = cars, type = c("p", "smooth"), pch = 18,
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:0px;right:30px; width:80px" />
 
-```{r}
+```{r, eval=TRUE}
 library(ggplot2)
+library(dplyr)
 cars %>% 
   ggplot(data = ., aes(x = speed, y = dist)) +
   geom_point(pch = 18, size = 2, color = "dodgerblue4") +
@@ -70,28 +71,64 @@ cars %>%
 
 ## `ggviz`
 
+```{r, eval=TRUE}
+
+```
+
+
 # Visualización interactiva
 
 ## `plotly`
 
 <img src="https://i.pinimg.com/originals/2f/e6/f4/2fe6f4b2df9837a14cabefa4cb22d7c6.png" style="position:absolute;top:0px;right:30px; width:80px" />
 
+```{r, eval=TRUE}
+
+```
+
 ## `rgl`
+
+```{r, eval=TRUE}
+
+```
 
 ## `dygraphs`
 
+```{r, eval=TRUE}
+
+```
 
 ## `leaflet`
 
+```{r, eval=TRUE}
+
+```
+
 ## `taucharts`
+
+```{r, eval=TRUE}
+
+```
 
 ## `metricsgraphics`
 
+```{r, eval=TRUE}
+
+```
+
 ## `highcharter`
+
+```{r, eval=TRUE}
+
+```
 
 ## `echarts4r`
 
 <img src="https://raw.githubusercontent.com/JohnCoene/echarts4r/master/docs/logo.png" style="position:absolute;top:0px;right:30px; width:80px" />
+
+```{r, eval=TRUE}
+
+```
 
 # 
 
