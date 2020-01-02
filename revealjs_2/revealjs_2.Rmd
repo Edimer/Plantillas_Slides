@@ -1,5 +1,5 @@
 ---
-title: "Biblioteca `revealjs`: Gráficos con R"
+title: "Sistemas de graficación con R"
 author: "[Edimer David Jaramillo](https://edimer.github.io/)"
 date: "`r Sys.Date()`"
 output:
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(eval = FALSE,
                       fig.height = 4)
 ```
 
-# Introducción
+# Componentes
 
 ## Sistemas de graficación
 
@@ -26,10 +26,9 @@ knitr::opts_chunk$set(eval = FALSE,
     - `graphics`
     - `lattice`
     - `ggplot2`
-    - `ggviz`
+    - `ggvis`
 - Visualización interactiva:
     - `plotly`
-    - `rgl`
     - `dygraphs`
     - `leaflet`
     - `taucharts`
@@ -57,8 +56,6 @@ xyplot(dist ~ speed, data = cars, type = c("p", "smooth"), pch = 18,
 
 ## `ggplot2`
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GbE9z6urbtMwA9i1UiXcUOizIZLwVrx4mTZ84B_YKCrzS6Ia&s" style="position:absolute;top:0px;right:30px; width:80px" />
-
 ```{r, eval=TRUE}
 library(ggplot2)
 library(dplyr)
@@ -69,12 +66,18 @@ cars %>%
   theme_light()
 ```
 
-## `ggviz`
+## `ggvis`
 
+<center>
 ```{r, eval=TRUE}
-
+library(ggvis)
+cars %>% 
+  ggvis(x = ~speed, y = ~dist) %>%  
+  layer_points(shape := "diamond", fill = "dodgerblue4", stroke := "black") %>% 
+  layer_smooths(stroke := "firebrick", span = 2/3) %>% 
+  hide_legend("fill")
 ```
-
+</center>
 
 # Visualización interactiva
 
@@ -82,53 +85,64 @@ cars %>%
 
 <img src="https://i.pinimg.com/originals/2f/e6/f4/2fe6f4b2df9837a14cabefa4cb22d7c6.png" style="position:absolute;top:0px;right:30px; width:80px" />
 
+<center>
 ```{r, eval=TRUE}
-
+library(plotly)
+cars %>% 
+  plot_ly(x = ~speed, y = ~dist, color = I("dodgerblue4"), stroke = I("black"),
+          symbol = I("diamond"), type = "scatter") %>% 
+  add_lines(y = ~fitted(loess(dist ~ speed, span = 2/3)), color = I("red3")) %>% 
+  layout(showlegend = FALSE)
 ```
-
-## `rgl`
-
-```{r, eval=TRUE}
-
-```
+</center>
 
 ## `dygraphs`
 
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 ## `leaflet`
 
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 ## `taucharts`
 
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 ## `metricsgraphics`
 
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 ## `highcharter`
 
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 ## `echarts4r`
 
-<img src="https://raw.githubusercontent.com/JohnCoene/echarts4r/master/docs/logo.png" style="position:absolute;top:0px;right:30px; width:80px" />
-
+<center>
 ```{r, eval=TRUE}
 
 ```
+</center>
 
 # 
 
