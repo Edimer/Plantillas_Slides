@@ -1,0 +1,36 @@
+---
+title: "Biblioteca `revealjs`"
+subtitle: "Plantilla 1"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+date: "`r Sys.Date()`"
+output:
+  revealjs::revealjs_presentation:
+    css: style_revealjs_1.css
+    df_print: paged
+    self_contained: true
+    center: true
+    fig_width: 6
+    fig_height: 4
+fig_width: 6 
+fig_height: 4 
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+```
+
+# Diseño de experimentos
+
+## Ronald Fisher
+
+```{r, echo=FALSE, eval = TRUE, fig.align = 'center', fig.cap='R. Fisher 1.', out.width="500"}
+knitr::include_graphics("img/fisher1.jpg")
+```
+
+## Ronald Fisher
+
+```{r, echo=FALSE, eval = TRUE, fig.align = 'center', fig.cap='R. Fisher 2.', out.width="500"}
+knitr::include_graphics("img/fisher2.PNG")
+```
