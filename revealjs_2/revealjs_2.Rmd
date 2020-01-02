@@ -135,7 +135,10 @@ mtcars %>%
 
 <center>
 ```{r, eval=TRUE}
+library("highcharter")
+data(diamonds, mpg, package = "ggplot2")
 
+hchart(mpg, "scatter", hcaes(x = displ, y = hwy, group = class))
 ```
 </center>
 
@@ -143,7 +146,17 @@ mtcars %>%
 
 <center>
 ```{r, eval=TRUE}
-
+library(echarts4r)
+e1 <- iris %>% 
+  group_by(Species) %>% 
+  e_charts(
+    Sepal.Length,
+    elementId = "chart"
+  ) %>% 
+  e_scatter(Petal.Length, Sepal.Width) %>% 
+  e_datazoom(show = FALSE, y_index = 0) %>% 
+  e_x_axis(min = 4)
+e1
 ```
 </center>
 
@@ -154,6 +167,8 @@ mtcars %>%
 - [Ejemplos `dygraphs` en Rpubs](https://www.rpubs.com/yoshio/99777)
 - [Ejemplos `taucharts`](http://www.buildingwidgets.com/blog/2015/8/5/week-31-taucharts)
 - [Ejemplos `metricsgraphics`](http://hrbrmstr.github.io/metricsgraphics/)
+- [Ejemplos `highcharter`](http://jkunst.com/highcharter/)
+- [Ejemplos `echarts4r`](https://echarts4r.john-coene.com/index.html)
 
 <!--
 # 
